@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="text-block" style="background-color: black; color: white; padding: 50px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis cupiditate minima nemo saepe nesciunt beatae
+        labore quos, et illo debitis, quibusdam quod! Mollitia facere voluptate animi autem voluptas accusantium modi.
+    </div>
+
+    <div>
+        <input type="text" id="some-text" />
+        <button id="some-button" disabled>Send</button>
+    </div>
+
+    <script>
+        let divElement = document.getElementById(`text-block`);
+
+        const textMouseoverHandler = ((e) => {
+
+            let backgroundColor = e.currentTarget.style.backgroundColor;
+            if (backgroundColor === `black`) {
+                e.currentTarget.style.backgroundColor = `white`;
+                e.currentTarget.style.color = `black`;
+            } else {
+                e.currentTarget.style.backgroundColor = `black`;
+                e.currentTarget.style.color = `white`;
+            }
+        });
+        divElement.addEventListener(`mouseover`, textMouseoverHandler);
+
+           
+
+        let textElement = document.getElementById(`some-text`);
+        let buttonElement = document.getElementById(`some-button`);
+
+        textElement.addEventListener(`input`, (e) => {
+            buttonElement.removeAttribute(`disabled`);
+        });
+
+        buttonElement.addEventListener(`click`, () => {
+            divElement.removeEventListener(`mouseover, textMouseoverHandler`);
+        });
+    </script>
+
+</body>
+
+</html>

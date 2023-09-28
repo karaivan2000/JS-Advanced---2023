@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part one</title>
+</head>
+
+<body>
+    <h1 id="heading">Hello DOM!</h1>>
+
+    <ul>
+        <li>BMV</li>
+        <li>Mercedes</li>
+        <li id="citroen-car">Citroen</li>
+    </ul>
+    <button onclick="changeTitle"()>Title</button>
+    <button onclick="onButtonClick()">Second</button>
+    <button onclick="changeCar()">Car</button>
+    <script>
+        function onButtonClick() {
+            let name = `Pesho`;
+            console.log(name);
+        }
+
+        function changeTitle() {
+            let headingElement = document.getElementById(`heading`);
+            console.log(headingElement);
+            headingElement.textContent = `Hello from JS!`
+        }
+
+        function changeCar () {
+            let carElement = documnet.getElementById(`citroen-car`);
+            carElement.textContent = `Citroen Picasso`;
+        }
+
+
+    </script>
+    <script src="demo.js"></script>
+</body>
+
+</html>

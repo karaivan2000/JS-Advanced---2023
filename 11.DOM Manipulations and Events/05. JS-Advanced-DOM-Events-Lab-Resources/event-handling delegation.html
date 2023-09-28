@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>DOM Events | Movie List</h1>
+
+
+    <ul id="movie-list">
+        <li>The Matrix</li>
+        <li>The Lord of the Rings</li>
+        <li>Chronicles of Narniac</li>
+        <li>Man of steel</li>
+        <li>The Case for Chirst</li>
+    </ul>
+
+   <a href="/" id="link">LINK</a>
+    
+    <script>
+        let movieElements = document.getElementById(`movie-list`);
+        
+        movieElements.addEventListener(`click`, (e) =>{
+            if (e.target.tagName !== `LI`) {
+                return
+            }
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.target.tagName);
+
+            e.target.style.textDecoration = `line-through`;
+        });
+        
+        let linkElement = document.getElementById(`link`);
+        linkElement.addEventListener(`click`, (e) => {
+            e.preventDefault();
+            console.log(`click`);
+        });
+    </script>
+</body>
+</html>

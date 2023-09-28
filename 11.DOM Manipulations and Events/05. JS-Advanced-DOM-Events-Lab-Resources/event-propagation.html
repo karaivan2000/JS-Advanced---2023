@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 id="parent" style="padding: 40px; background-color: aqua;">Parent</h2>
+
+        <div>
+            <h3 id="child" style="padding: 40px; background-color: coral;">Child</h3>
+        </div>
+    </div>
+
+    <script>
+        let parentElement = document.getElementById(`parent`);
+        let childElement = document.getElementById(`child`);
+
+        parentElement.addEventListener(`click`, (e) => {
+            console.log(`Parent`);
+        }), true;
+        childElement.addEventListener(`click`, (e) => {
+            console.log(`Child`);
+        });
+    </script>
+</body>
+</html>

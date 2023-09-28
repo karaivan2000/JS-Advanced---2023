@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors</title>
+</head>
+<body>
+    <h1>DOM Selectors</h1>
+
+    <p class="fancy-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium neque ullam aspernatur reiciendis quidem harum sequi iure sed officiis nemo quia mollitia deserunt laboriosam amet aut, perferendis, hic soluta inventore?</p>
+
+    <ul>
+        <li class="fancy-text">Some phrase here</li>
+        <li>Second phrase</li>
+    </ul>
+
+    <script>
+        let textElements = document.getElementsByClassName(`fancy-text`);
+        console.log(textElements)
+
+        let liElements = document.getElementsByTagName(`li`);
+        console.log(liElements);
+        
+        let fancyParagpah = document.querySelector(`p.fancy-text`);
+        console.log(fancyParagpah);
+
+        let unorderedliElements = document.querySelectorAll(`ul li`);
+        console.log(unorderedliElements);
+    </script>
+
+</body>
+</html>
